@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing - Best Online Store</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="https://kit.fontawesome.com/062f9363cd.js" crossorigin="anonymous"></script>
+    <style>*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: capitalize;
+        scroll-behavior: smooth;
+        position: relative;
+    }
+    
+    #bars{
+        display: none;
+    }
+    .navbar{
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f5f5f5;
+        z-index: 9;
+        
+    }
+    .nav{
+        padding: 10px 10vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .brand-logo{
+        height: 60px;
+        font-size: 34px;
+    }
+    .nav-items{
+        display: flex;
+        align-items: center;
+    }
+    .search{
+        width: 500px;
+        display: flex;
+    }
+    .search-box{
+        width: 80%;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid #d1d1d1;
+        text-transform: capitalize;
+        background: none;
+        outline: none;
+        border-radius: 10px 0px 0px 10px;
+        font-size: 15px;
+    }
+    .search-btn{
+        width: 20%;
+        height: 40px;
+        text-transform: capitalize;
+        background-color: #383838;
+        outline: none;
+        font-size: 15px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 0px 10px 10px 0px;
+    }
+    .search-box::placeholder{
+        color: #ababab;
+    }
+    .nav-items a{
+        font-size: 30px;
+        margin-left: 20px;
+        height: 40px;
+        width: 40px;
+        
+    }
+    .nav-items a i{
+        color: #aaaaaa;
+    }
+    .link-container{
+        width: 100%;
+        display: flex;
+        padding: 10px 10vw;
+        justify-content: center;
+        list-style: none;
+        border-top: 1px solid #d1d1d1;
+    }
+    .link{
+        text-transform: capitalize;
+        margin: 0px 5px;
+        padding: 0px 10px;
+        text-decoration: none;
+        color: #383838;
+        opacity: 0.5;
+        transition: 0.3s ease;
+    }
+    .link:hover{
+        opacity: 1;
+    }
+    
+    /* header section  */
+    
+    .hero-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        height: calc(100vh - 120px);
+        background-image: url('https://images.unsplash.com/3/www.madebyvadim.com.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1182&q=80'),linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+        background-size: cover;
+        background-position: center;
+        
+    }
+    .hero-section .logo{
+        display: block;
+        margin: auto;
+        font-size: 60px;
+        color: #fff;
+        text-transform: capitalize;
+        text-align: center;
+        
+    }
+    .hero-section .sub-heading{
+        margin-top: 10px;
+        font-size: 26px;
+        text-transform: capitalize;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+    }
+    
+    /* product section */
+    
+    .product{
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0px;
+    }
+    .product-category{
+       text-transform: capitalize;
+       font-weight: bold;
+       font-size: 34px;
+       width: 80%;
+       text-align: center;
+       margin: auto;
+       padding: 10px 0px;
+       border-bottom: 1px solid #ababab;
+    }
+    .product-container{
+        display: flex;
+        width: 95%;
+        margin: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: auto;
+    
+    }
+    .product-card{
+        width: 17rem;
+        height: 450px;
+        position: relative;
+        margin: 10px;
+        border-radius: 5px;
+    }
+    .product-img{
+        position: relative;
+        width: 17rem;
+        height: 350px;
+    }
+    .product-card img{
+        border-radius: 5px;
+        position: absolute;
+        width: 17rem;
+        height: 350px;
+        object-fit: cover;
+        
+    }
+    .offer{
+        position: absolute;
+        background-color: #fff;
+        padding: 5px;
+        text-transform: capitalize;
+        border-radius: 5px;
+        font-size: 18px;
+        color: red;
+        right: 10px;
+        top: 10px;
+        z-index: 8;
+    }
+    .product-info{
+        padding: 5px;
+    }
+    .brand-name{
+        text-transform: capitalize;
+    }
+    .product-des{
+        text-transform: capitalize;
+        width: 100%;
+        height: 30px;
+        overflow: hidden;
+    }
+    .price{
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 20px ;
+    }
+    .real-price{
+        text-decoration: line-through;
+        color: #ababab;
+    }
+    .img-btn{
+        z-index: 8;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 40px;
+        text-transform: capitalize;
+        font-size: 18px;
+        background-color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-weight: 300;
+        color: red;
+        opacity: 0;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .product-card:hover .img-btn{
+        opacity: 1;
+    }
+    
+    .collection-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        margin: auto;
+    }
+    .collection{
+        position: relative;
+    }
+    .collection img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: .8;
+        transition: 0.5s;
+    }
+    .collection p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 50px;
+        color: #fff;
+        text-align: center;
+        text-transform: capitalize;
+    }
+    .collection:nth-child(3){
+        grid-column: span 2;
+        margin-bottom: 10px;
+    }
+    .collection img:hover{
+        opacity: 1;
+    }
+    .shop-info{
+        width: 80%;
+        margin: auto;
+        position: relative;
+        text-align: center;
+        padding: 20px 0px;
+        
+    }
+    .shop-det{
+        text-transform: capitalize;
+    }
+    .shop-det h2{
+        font-size: 34px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ababab;
+    }
+    .shop-det p{
+        line-height: 23px;
+        color: #ababab;
+    }
+    footer{
+        background-color: #393939;
+        padding: 20px 30px;
+    }
+    .footer-container{
+        width: 80%;
+        margin: auto;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    .logo{
+        text-transform: capitalize;
+        color: #fff;
+        margin-bottom:10px ;
+    }
+    .ul-links{
+        width: auto;
+        height: 40px;
+    }
+    .ul-links ul{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px 0px;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .ul-links ul li a{
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+        opacity: .5;
+        transition: 0.5s;
+    }
+    .ul-links ul li a:hover{
+        opacity: 1;
+    }
+    .about{
+        text-transform: capitalize;
+        width: 70%;
+        margin: 20px auto;
+        padding: 5px 0px;
+        line-height: 22px;
+        color: #fff;
+        border-top:1px solid #ababab ;
+        opacity: .7;
+        padding: 10px 0px;
+    }
+    .other-content{
+        width: 70%;
+        margin: auto;
+        padding: 10px 0px;
+        color: #fff;
+    }
+    .other-content a{
+        text-transform: capitalize;
+        font-size: 15px;
+        margin: 0px 20px;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.7;
+    }
+    .icons{
+            padding: 10px 0px;
+    
+    }
+    .icons-inner{
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .icons-inner i{
+        font-size: 25px;
+        color: #fff;
+        opacity: .8;
+        cursor: pointer;
+        transition: .5s;
+    }
+    .icons-inner i:hover{
+        opacity: 1;
+    }
+    .copy{
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        margin-top:10px ;
+        text-transform: capitalize;
+        opacity: .7;
+    }
+    .woman-bg{
+        background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.363),rgba(0, 0, 0, 0.363)),url('https://images.unsplash.com/photo-1500771471050-fb3ee40b66c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+        width: 100%;
+        height: 80vh;
+        box-sizing: border-box;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+    }
+    .kid-bg{
+        background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.363),rgba(0, 0, 0, 0.363)),url('https://images.unsplash.com/photo-1604467794349-0b74285de7e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2lkcyUyMGNsb3RoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+        width: 100%;
+        height: 80vh;
+        box-sizing: border-box;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .woman-text{
+        width: 80%;
+        height: 100%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .woman-text h1{
+        font-size: 50px;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #fff;
+    }
+    .woman-text p{
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .acc-bg{
+            background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.363),rgba(0, 0, 0, 0.363)),url('https://images.unsplash.com/photo-1588410350776-4328097ce98a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+            width: 100%;
+            height: 80vh;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+    }
+    .arr{
+        text-align: center;
+        background-color: #d1d1d1;
+        height: 100px;
+    }
+    
+    .arr i{
+        color: #fff;
+        font-size: 50px;
+        background-color: #aaaaaa;
+    }
+    
+    @media screen and (max-width:1100px) {
+        .search{
+            display: none;
+        }
+        .nav{
+            padding: 5px 5vw;
+        }
+       
+       
+        .collection p{
+            font-size: 23px;
+        }
+        .logo h1{
+            font-size: 20px;
+        }
+        .ul-links{
+            display: block;
+            flex-direction: column;
+        }
+        .ul-links ul{
+            display: block;
+            font-size: 15px;
+        }
+        .footer-container{
+            display: none;
+        }
+    }
+    
+    @media screen and (max-width:650px) {
+        
+        .woman-text h1{
+            font-size: 30px;
+            text-align: center;
+        }
+        .woman-text p{
+            font-size: 15px;
+        }
+        .woman-bg,.acc-bg,.kid-bg{
+            height: 58vh;
+        }
+        .navbar ul{
+            display: block;
+            text-align: center;
+            height: 50%;
+            display: none;
+            transition: 0.5s ease;
+        }
+        #bars{
+            display: inline-block;
+            cursor: pointer;
+            
+        }
+        .brand-logo{
+            height: 49px;
+            font-size: 27px;
+            padding-top: 4px;
+        }
+        .nav-items a i{
+            font-size: 28px;
+        }
+        .hero-section{
+            height: 50vh;
+        }
+        .hero-section .logo{
+            font-size: 34px;
+        }
+        .hero-section .sub-heading{
+            font-size: 17px;
+        }
+        .product-category{
+            font-size: 28px;
+        }
+        .shop-det h2{
+            font-size: 25px;
+        }
+        .shop-det p {
+            line-height: 13px;
+            color: #ababab;
+            font-size: 13px;
+        }
+        .brand-name {
+            text-transform: capitalize;
+            font-size: 20px;
+        }
+        .product-des{
+            font-size: 15px;
+        }
+        .about{
+            display: none;
+        }
+        
+    }</style>
+</head>
+
+<body>
+    <div class="this" id="home"></div>
+
+    
+    <!-- navbar section -->
+    <nav class="navbar" id=""></nav>
+
+    <!-- main section start -->
+    <header class="hero-section" id="bg">
+        <div class="content">
+            <h1 class="logo">clothing</h1>
+            <p class="sub-heading">best fashion collection of all time</p>
+        </div>
+    </header>
+    <section class="product">
+        <h2 class="product-category">best selling</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1495494527480-87e8644f0d99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHdvbWFuJTIwbW9kZWxpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1535631849663-2ff9eeebf4b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29tYW4lMjBtb2RlbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1578297925113-09148b4d1a5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjBtb2RlbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1523359346063-d879354c0ea5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWFuJTIwbW9kZWxpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1570915226741-cc7d678ad7ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHdvbWFuJTIwbW9kZWxpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1535337302028-7b97c5e18cc9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHdvbWFuJTIwbW9kZWxpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1525430117313-640b917a03f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWFuJTIwbW9kZWxpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="collection-container">
+        <a href="" class="collection">
+            <img src="https://images.unsplash.com/photo-1644982647708-0b2cc3d910b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MTV8fG1vZGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p class="collection-title">woman <br>collection</p>
+        </a>
+
+        <a href="" class="collection">
+            <img src="https://images.unsplash.com/photo-1595797870751-09a832ca6e39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHRhdHRvJTIwbWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+            <p class="collection-title">man <br>collection</p>
+        </a>
+
+        <a href=""  class="collection">
+            <img src="https://images.unsplash.com/3/www.madebyvadim.com.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWNjZXNzb3JpZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+            <p class="collection-title">accessories <br>collection</p>
+        </a>
+    </section>
+
+    
+
+    <section class="product">
+        <div class="this" id="man"></div>
+        <h2 class="product-category">man collection</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1598106755735-3ebfced1d38b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1582015752624-e8b1c75e3711?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1597843572347-e66b3eeb7b79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1hbiUyMG1vZGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbiUyMG1vZGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbiUyMG1vZGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1592104806528-c1b931297078?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fG1hbiUyMG1vZGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+
+    
+
+    <div class="woman-bg">
+        <div class="this" id="woman"></div>
+        <div class="woman-text">
+            <h1>best woman collections</h1>
+        </div>
+    </div>
+    <section class="product">
+        
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1592104806528-c1b931297078?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fG1hbiUyMG1vZGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1527736947477-2790e28f3443?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjBtb2RlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1516823782043-f14364ca8f1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvbWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8d29tYW4lMjBtb2RlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHdvbWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1504051771394-dd2e66b2e08f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1500336624523-d727130c3328?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1503104834685-7205e8607eb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHdvbWFuJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <div class="kid-bg">
+        <div class="this" id="kids"></div>
+        <div class="woman-text">
+            <h1>best kids collections</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores optio quibusdam perspiciatis. Itaque neque qui numquam aperiam aspernatur, mollitia, possimus ducimus placeat dolor necessitatibus, omnis velit delectus ratione officia facere!</p>
+        </div>
+    </div>
+    <section class="product">
+        <h2 class="product-category">kids collection</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8a2lkcyUyMGNsb3RoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1619784299133-f691ffaea42f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8a2lkcyUyMGNsb3RoZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGtpZHMlMjBjbG90aGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpZHMlMjBjbG90aGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGtpZHMlMjBjbG90aGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1593893513213-0ecc2ea282c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGtpZHMlMjBjbG90aGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGtpZHMlMjBjbG90aGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1533512930330-4ac257c86793?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGtpZHMlMjBjbG90aGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="acc-bg">
+        <div class="this" id="accs"></div>
+        <div class="woman-text">
+            <h1>Accessories</h1>
+            
+        </div>
+    </div>
+
+    <section class="product">
+        <h2 class="product-category">Accessories</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1556227151-799479f586bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1478198697312-304b0bd9475f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1593765947316-5945ff9b77bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1646087710829-aa2845f484ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1646087710829-aa2845f484ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="offer">50%off</span>
+                    <img src="https://images.unsplash.com/photo-1612902457652-33aff0a641fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGFjY2Vzc29yaWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    <button class="img-btn">add to cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="brand-name">brand name</h2>
+                    <p class="product-des">best selling product</p>
+                    <span class="price">&#8377;200</span><span class="real-price">&#8377;400</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="shop-info">
+        <div class="shop-det">
+            <h2>about our shop</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas saepe tempora est a nisi amet soluta, temporibus facilis vitae! Est explicabo accusamus ratione nesciunt porro doloremque modi corrupti molestiae quasi magni vero enim saepe praesentium ab, fugiat optio ex mollitia at nam illo a amet?</p>
+        </div>
+    </div>
+    <div class="this" id="add"></div>
+
+   
+    <footer id="footer">
+        
+    </footer>
+    
+    
+
+</body>
+<script src="js/home.js"></script>
+<script>
+    function createNav(){
+    const nav = document.querySelector('.navbar');
+    nav.innerHTML = `<div class="nav">
+    <h1 class="brand-logo"><i class="fas fa-bars" id="bars"></i> Clothing</h1>
+    <div class="nav-items">
+        <div class="search">
+            <input type="text" class="search-box" placeholder="serch brand and product">
+            <button class="search-btn">search</button>
+        </div>
+        <a href=""><i class="fas fa-user"></i></a>
+        <a href=""><i class="fas fa-shopping-cart"></i></a>
+    </div>
+</div>
+<ul class="link-container" id="res-menu">
+    <li class="link-item"><a href="#home" class="link">home</a></li>
+    <li class="link-item"><a href="#man" class="link">man</a></li>
+    <li class="link-item"><a href="#woman" class="link">woman</a></li>
+    <li class="link-item"><a href="#kids" class="link">kids</a></li>
+    <li class="link-item"><a href="#accs" class="link">accessories</a></li>
+</ul>`
+}
+createNav()
+
+function createFooter(){
+    const footer = document.getElementById('footer');
+    footer.innerHTML = `
+    <div class="footer-container">
+            <div class="logo">
+                <h1 class="logo">clothing - best online sellar</h1>
+            </div>
+            <div class="ul-links">
+                <ul>
+                    <li><a href="">all colection</a></li>
+                    <li><a href="">man collection</a></li>
+                    <li><a href="">woman collection</a></li>
+                    <li><a href="">kids collection</a></li>
+                    <li><a href="">acceseries</a></li>
+                </ul>
+            </div>
+            <div class="about">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi nihil, placeat aspernatur officia provident, adipisci eos non delectus, asperiores velit laborum perferendis nisi minima alias labore voluptatem corrupti iure repellendus.
+            </div>
+            <div class="other-content">
+                <a href="">privacy policy</a> |
+                <a href="">terms and conditions</a>|
+                <a href="">privacy policy</a>
+            </div>
+            <div class="icons">
+                <div class="icons-inner">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fas fa-phone"></i>
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <p> &copy; clothing online store all rights reserved</p>
+        </div>
+
+
+    `;
+}
+createFooter()
+
+function MenuBars(){
+    const bars = document.getElementById('bars');
+    const menuBtn = document.getElementById('res-menu');
+
+    bars.addEventListener('click',function(){
+        console.log('this is click');
+
+        if(menuBtn.style.display  == "inline-block"){
+            menuBtn.style.display  = "none"
+        }
+        else{
+            menuBtn.style.display  = "inline-block"
+        }
+        
+    })
+    
+}
+MenuBars()
+</script>
+
+</html>
